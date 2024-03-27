@@ -1,0 +1,25 @@
+Implement Queue using Linked list
+class Qnode(object):
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+class Myqueue:
+    def __init__(self):
+        self.head=None
+        self.tail=None
+    def push(Self, x:int)->None:
+        node=Qnode(x)
+        if not self.head:
+            self.head=node
+            self.tail=node
+        else:
+            self.tail.next=node
+            self.tail=node
+    def pop(self)->int:
+        temp=self.head
+        self.head=temp.next
+        return temp.val
+    def peek(self)->int:
+        return self.head.val
+    def empty(self)->bool:
+        return self.head==None
