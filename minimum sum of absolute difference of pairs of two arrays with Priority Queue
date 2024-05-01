@@ -1,0 +1,15 @@
+from queue import PriorityQueue
+def findminsum(a,b):
+    p1=PriorityQueue()
+    p2=PriorityQueue()
+    total=0
+    for x in a:
+        p1.put(x)
+    for y in b:
+        p2.put(y)
+    while not p1.empty() and not p2.empty():
+        total=total+abs(p1.get()-p2.get())
+    return total
+a=[int(x) for x in input().split()]
+b=[int(x) for x in input().split()]
+print(findminsum(a,b))
