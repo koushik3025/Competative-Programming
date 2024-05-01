@@ -1,0 +1,15 @@
+from queue import PriorityQueue
+def solve(a):
+    pq=PriorityQueue()
+    num1=""
+    num2=""
+    for x in a:
+        pq.put(x)
+    while not pq.empty():
+        num1+=str(pq.get())
+        if not pq.empty():
+            num2+=str(pq.get())
+    sum_nums=int(num1)+int(num2)
+    return sum_nums
+arr=[int(x) for x in input().split()]
+print("The required minimum is:",solve(arr))
