@@ -6,12 +6,11 @@ class Solution:
                 minimum+=1
                 maximum+=1
             elif i==')':
-                mininimum=max(0,minimum-1)
+                minimum=max(0,minimum-1)
                 maximum-=1
             else:
-                mininimum=max(0,minimum-1)
+                minimum=max(0,minimum-1)
                 maximum+=1
-        if maximum<0:
-            return False
-        else:
-            return True
+            if maximum<0:
+                return False  
+        return minimum==0
