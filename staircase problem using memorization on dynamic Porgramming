@@ -1,0 +1,11 @@
+#using memorization
+def staircase(n,memo={}):
+    if n in memo:
+        return memo[n]
+    elif n in [0,1,2]:
+        return n
+    else:
+        memo[n]=staircase(n-1,memo)+staircase(n-2,memo)
+        return memo[n]
+n=int(input("Enter number of stairs:"))
+print(staircase(n))
