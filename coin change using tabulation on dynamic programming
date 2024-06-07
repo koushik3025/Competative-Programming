@@ -1,0 +1,17 @@
+def mincoins(coins,V):
+    dp=[float('inf')]*(V+1)
+    dp[0]=0
+    for i in range(1,V+1):
+        for coin in coins:
+            if coin<=i:
+                dp[i]=min(dp[i],dp[i-coin]+1)
+    if dp[V]==float('inf'):
+        return -1
+    else:
+        return dp[V]
+coins1=[25,10,5]
+V1=30
+print("Maximum:",mincoins(coins1,V1))
+coins2=[9,6,5,1]
+V2=11
+print("Minimum:",mincoins(coins2,V2))
