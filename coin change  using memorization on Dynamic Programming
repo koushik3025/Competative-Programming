@@ -15,4 +15,4 @@ def min_coins(coins, amount,remaining):
 coins=[25,10,5]
 V=30
 result=min_coins(coins,V,V)
-print(memo)
+print(result)
